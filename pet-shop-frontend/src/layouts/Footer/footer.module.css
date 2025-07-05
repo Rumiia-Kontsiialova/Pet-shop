@@ -1,5 +1,88 @@
+/* .container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    height: 100%;
+    max-height: 376px;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.footerAbout {
+    display: flex;
+    gap: 32px;
+}
+
+.tel,
+.address {
+    background-color: rgba(241, 243, 244, 1);
+    max-width: 780px;
+    width: 100%;
+    max-height: 170px;
+    height: 100%;
+}
+
+.socials,
+.hours {
+    background-color: rgba(241, 243, 244, 1);
+    max-width: 548px;
+    width: 100%;
+    max-height: 170px;
+    height: 100%;
+} */
+
 .container {
     width: 100%;
-    max-width: 1440px;  
+    max-width: 1360px;
+    margin: 0 auto;
+    height: 100%;
+    max-height: 376px;
+    padding: 0 10px; /* чтобы контент не приилипал */
    
 }
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.footerAbout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footerAbout > div {
+  background-color: rgba(241, 243, 244, 1);
+  padding: 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.footerAbout p:first-child {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(139, 139, 139, 1);
+  padding: 20px 15px;
+  
+}
+
+.footerAbout a,
+.footerAbout address,
+.footerAbout p:last-child  {
+    text-decoration: none;
+    font-style: normal;
+    color: rgba(40, 40, 40, 1);
+    font-size: 40px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+
+

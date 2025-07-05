@@ -1,11 +1,9 @@
 .container {
     background-color: rgba(255, 255, 255, 1);
     width: 100%;
-    max-width: 1440px;         /* ограничение ширины на больших экранах */
     height: auto;              /* высота адаптивная */
     min-height: 64px;
     padding: 30px 40px;
-    margin: 0 auto;
     border-bottom: 1px solid rgba(221, 221, 221, 1); /* тонкая линия снизу */
     display: flex;
     align-items: center;

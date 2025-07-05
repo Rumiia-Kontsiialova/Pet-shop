@@ -6,28 +6,28 @@ import styles from './footer.module.css'
 const Footer = () => {
   return (
     <div className={styles.container}>
-        <h1>Contact</h1>
-        <div>
-            <p>Phone</p>
-            <a href="+49 30 915-88492"></a>
-        </div>
-        <div>
-            <p class="contact-label">Address</p>
-            <address>Wallstraße 9-13, 10179 Berlin <br /> Deutschland</address>
-        </div>
-        <div>
-            <p>Socials</p>
-            <Link to='/https://www.instagram.com/'><img src={instagram} alt="instagram" /></Link>
-            <Link to='/https://www.whatsapp.com/'><img src={whatsapp} alt="whatsapp" /></Link>
-        </div>
-        <div>
-            <p>Working Hours</p>
-            <p>24 hours a day</p>
-        </div>
-        <div>
-
+        <h1 className={styles.title}>Contact</h1>
+        <div className={styles.footerAbout}>
+            <div className={styles.tel}>
+                <p>Phone</p>
+                <a href="+49 30 915-88492">+49 30 915-88492</a>
+            </div>      
+            <div className={styles.socials}>
+                <p>Socials</p>
+                <Link to='/https://www.instagram.com/'><img src={instagram} alt="instagram" /></Link>
+                <Link to='/https://www.whatsapp.com/'><img src={whatsapp} alt="whatsapp" /></Link>
+            </div>
+            <div className={styles.address}>
+                <p>Address</p>
+                <address>Wallstraße 9-13, 10179 Berlin <br /> Deutschland</address>
+            </div>
+            <div className={styles.hours}>
+                <p>Working Hours</p>
+                <p>24 hours a day</p>
+            </div>
         </div>
     </div>
+    
   )
 }
 
