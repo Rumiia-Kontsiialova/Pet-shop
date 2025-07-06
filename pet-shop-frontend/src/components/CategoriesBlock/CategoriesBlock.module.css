@@ -1,0 +1,66 @@
+.container {
+    max-width: 1360px;
+    width: 100%;
+    min-height: 502px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.titleLine {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgba(221, 221, 221, 1);
+    margin-left: 25px;
+}
+
+.titleBtn {
+    white-space: nowrap;
+}
+
+/* .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 32px;
+    list-style: none;
+} */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 равные колонки */
+  gap: 25px; /* одинаковый отступ между колонками и строками */
+  list-style: none; /* убираем маркеры списка */
+  padding: 0;
+}
+
+.gridItem img {
+  width: 100%;     /* картинка заполняет ячейку */
+  height: auto;    /* сохраняет пропорции */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.categoryName {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+
+
+

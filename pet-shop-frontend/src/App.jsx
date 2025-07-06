@@ -18,13 +18,13 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={HomePage}/>
-          <Route path="/categories" element={CategoriesPage}/>
-          <Route path="/product-from-category" element={ProductFromTheCategoryPage}/>
-          <Route path="/all-products" element={AllProductsPage}/>
-          <Route path="/discounted-products" element={DiscountedProductsPage}/>
-          <Route path="/product" element={ProductPage}/>
-          <Route path="/basket" element={BasketPage}/>
+          <Route path="/" element={<HomePage />}/>
+          <Route path="/categories" element={<CategoriesPage />}/>
+          <Route path="/product-from-category" element={<ProductFromTheCategoryPage />}/>
+          <Route path="/all-products" element={<AllProductsPage />}/>
+          <Route path="/discounted-products" element={<DiscountedProductsPage />}/>
+          <Route path="/product" element={<ProductPage />}/>
+          <Route path="/basket" element={<BasketPage />}/>
           {/* <Route path="/not-found" element={NotFoundPage}/> */}
         </Routes>
         <HomePage />

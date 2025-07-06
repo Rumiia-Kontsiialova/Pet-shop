@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../../layouts/Header/Header'
 import PromoHome from '../../components/PromoHome/PromoHome'
-import Footer from '../../layouts/Footer/Footer'
+import CategoriesBlock from '../../components/CategoriesBlock/CategoriesBlock'
 
 const HomePage = () => {
   return (
     <div>
       <PromoHome />
+      <CategoriesBlock />
     </div>
   )
 }
