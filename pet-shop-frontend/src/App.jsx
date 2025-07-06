@@ -27,6 +27,7 @@ function App() {
           <Route path="/basket" element={BasketPage}/>
           {/* <Route path="/not-found" element={NotFoundPage}/> */}
         </Routes>
+        <HomePage />
         <Footer />
       </div>
   )
