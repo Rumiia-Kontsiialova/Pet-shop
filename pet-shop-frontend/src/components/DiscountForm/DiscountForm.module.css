@@ -54,4 +54,10 @@
     width: 100%;
 }
 
+@media (max-width: 1299px) {
+  
+  .content img {
+    display: none; /* Скрываем изображение */
+  }
 
+}
