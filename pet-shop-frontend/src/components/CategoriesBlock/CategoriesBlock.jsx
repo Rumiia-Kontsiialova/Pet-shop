@@ -25,6 +25,7 @@ const CategoriesBlock = () => {
             <div className={styles.titleLine}></div>
             <Link to="/categories"><Button type='default' className={styles.titleBtn}>All categories</Button></Link>
         </div>
+        
         <ul className={styles.gridContainer}>
             {categories.slice(0, 4).map((category) => (
                 <li key={category.id} className={styles.gridItem}>
