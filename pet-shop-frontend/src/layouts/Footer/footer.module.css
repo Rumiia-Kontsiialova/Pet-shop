@@ -85,5 +85,20 @@
     padding-left: 15px;
 }
 
+.mapContainer {
+    
+    margin-top: 30px;
+    
+}
+
+iframe {
+    width: 100%;
+    max-width: 1360px;
+    height: 350px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 150px;
+}
+
 
 

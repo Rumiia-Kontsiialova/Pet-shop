@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './CategoriesPage.module.css'
-import { Button } from 'antd'
+
 
 const CategoriesPage = () => {
     const [ categories, setCategories ] = useState([])
@@ -18,20 +18,21 @@ const CategoriesPage = () => {
         };
         fetchCategories()
     }, [])
+
   return (
     <div>
       <div className={styles.navigate}>
-        <Link to="/">
-          <Button>
-            Mein Page
-          </Button>
-        </Link>
+        <NavLink to="/"
+          className={({ isActive }) => isActive ? styles.activeLink : styles.normalLink}
+        >
+          Mein Page
+        </NavLink>
         <div className={styles.titleLine}></div>
-         <Link to="/categories">
-          <Button>
-            Categories
-          </Button>
-        </Link>
+         <NavLink to="/categories"
+          className={({ isActive }) => isActive ? styles.activeLink : styles.normalLink}
+         >
+          Categories
+        </NavLink>
       </div>
       <div className={styles.container}>
         <div className={styles.titleContainer}>
