@@ -1,9 +1,9 @@
 import { Button } from 'antd';
-import React from 'react'
 import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/slices/cartSlices';
 import { Link } from 'react-router-dom';
 
-const ProductCard = ({ product, minPrice, includeDiscount }) => {
+const ProductCard = ({ product, minPrice, maxPrice, includeDiscount }) => {
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
@@ -19,7 +19,7 @@ const ProductCard = ({ product, minPrice, includeDiscount }) => {
     }
 
     const isValidProduct = () => {
-        if (product.price < minPrice || product.price > maxPrice ) {
+        if (product.price < minPrice || product.price > maxPrice) {
             return false;
         }
         if(includeDiscount && !product.discount_price) {
@@ -43,7 +43,19 @@ const ProductCard = ({ product, minPrice, includeDiscount }) => {
             </div>
         </div>
         <Link to={`/products/${product.id}`}>
-            
+            <div>
+                <h3>{product.title}</h3>
+                <div>
+                    {product.discount_price ? (
+                        <>
+                            <span>${product.discount_price}</span>
+                            <span>${product.price}</span>
+                        </>
+                    ) : (
+                        <span>${product.price}</span>
+                    )}
+                </div>
+            </div>
         </Link>
     </li>
   )

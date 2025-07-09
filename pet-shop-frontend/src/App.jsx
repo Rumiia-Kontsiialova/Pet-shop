@@ -9,7 +9,7 @@ import BasketPage from "./pages/BasketPage/BasketPage"
 import Header from "./layouts/Header/Header"
 import './App.css'
 import Footer from "./layouts/Footer/Footer"
-// import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
 
 function App() {
@@ -20,12 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/categories" element={<CategoriesPage />}/>
-          <Route path="/product-from-category" element={<ProductFromTheCategoryPage />}/>
+          <Route path="/categories/:categoryId" element={<ProductFromTheCategoryPage />}/>
           <Route path="/all-products" element={<AllProductsPage />}/>
           <Route path="/discounted-products" element={<DiscountedProductsPage />}/>
           <Route path="/product" element={<ProductPage />}/>
           <Route path="/basket" element={<BasketPage />}/>
-          {/* <Route path="/not-found" element={NotFoundPage}/> */}
+          {/* <Route path="*" element={<NotFoundPage />}/> */}
         </Routes>
         <Footer />
       </div>
