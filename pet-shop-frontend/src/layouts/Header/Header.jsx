@@ -11,7 +11,7 @@ const Header = () => {
             <Link to='/' className={styles.link}>Mein Page</Link>
             <Link to='/categories' className={styles.link}>Categories</Link>
             <Link to='/all-products' className={styles.link}>All products</Link>
-            <Link to='/discounted-products' className={styles.link}>All sales</Link>
+            <Link to='/sale' className={styles.link}>All sales</Link>
         </nav>
         <Link to='/basket'><img src={basketEmpty} alt="logoBasket" /></Link>
     </div>

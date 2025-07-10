@@ -20,12 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/categories" element={<CategoriesPage />}/>
-          <Route path="/categories/:categoryId" element={<ProductFromTheCategoryPage />}/>
-          <Route path="/all-products" element={<AllProductsPage />}/>
-          <Route path="/discounted-products" element={<DiscountedProductsPage />}/>
-          <Route path="/product" element={<ProductPage />}/>
+          <Route path="categories/:categoryId" element={<ProductFromTheCategoryPage />}/>
+          <Route path="all-products" element={<AllProductsPage />}/>
+          <Route path="sale" element={<DiscountedProductsPage />}/>
+          <Route path="products/:productId" element={<ProductPage />}/>
           <Route path="/basket" element={<BasketPage />}/>
-          {/* <Route path="*" element={<NotFoundPage />}/> */}
+          <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,153 @@
+.container {
+    margin: 35px;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.titleLine {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgba(221, 221, 221, 1);
+    margin-left: 25px;
+}
+
+.titleBtn {
+    white-space: nowrap;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.ContShop {
+    padding: 20px 50px;
+    margin-bottom: 100px;
+}
+
+.cartContainer {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+.cartItems {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.itemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.itemDetails {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.itemTitle {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.itemControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemControls button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.itemPrice {
+  font-size: 18px;
+  min-width: 80px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.removeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}
+
+.orderDetails {
+  flex: 1;
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.orderDetails h2 {
+  margin-bottom: 10px;
+}
+
+.totalPrice {
+  font-size: 24px;
+  color: #000;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.orderForm input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.orderBtn {
+  background: #0057ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
