@@ -131,17 +131,33 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../redux/slices/basketSlice';
-import styles from './BasketPage.module.css'
+import { addToCart, removeFromCart} from '../../redux/slices/basketSlice';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import styles from './BasketPage.module.css';
 
-const BasketPage = () => {
+const Cart = () => {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state) => state.cart);
 
   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   if (items.length === 0) {
-    return <p className={styles.empty}>Корзина пуста</p>;
+    return (
+      <div className={styles.container}>
+        <div className={styles.titleContainer}>
+          <h2 className={styles.title}>Shopping cart</h2>
+          <div className={styles.titleLine}></div>
+          <Link to='/'>
+            <Button type='default' className={styles.titleBtn}>Back to the store</Button>
+          </Link>
+        </div>
+        <div>
+          <p>Looks like you have no items in your basket currently.</p>
+        </div>
+        <Button type='primary' className={styles.ContShop}>Continue Shopping</Button>
+      </div>
+    );
   }
 
   return (
@@ -185,5 +201,4 @@ const BasketPage = () => {
   );
 };
 
-export default BasketPage
-
+export default Cart;
