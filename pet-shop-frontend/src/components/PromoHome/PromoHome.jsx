@@ -6,7 +6,7 @@ const PromoHome = () => {
   return (
     <div className={styles.container}>
         <h1 className={styles.title}>Amazing Discounts <br /> on Pets Products!</h1>
-        <Link to='/discounted-products'><Button type='primary' className={styles.btn}>Check out</Button></Link>
+        <Link to='/sale'><Button type='primary' className={styles.btn}>Check out</Button></Link>
     </div>
   )
 }

@@ -4,14 +4,17 @@ import styles from './DiscountedProductsPage.module.css';
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "antd";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/slices/basketSlice"
 
 function DiscountedProductsPage() {
     const [allDiscountedProducts, setAllDiscountedProducts] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
-
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
     const [sortOrder, setSortOrder] = useState('default');
+
+    const dispatch = useDispatch();
+    const cartItemIds = useSelector((state) => state.cart.items.map((item) => item.id));
 
     useEffect(() => {
         const fetchDiscountedProducts = async () => {
@@ -35,10 +38,8 @@ function DiscountedProductsPage() {
         return 0;
     };
 
-    const handleAddToCart = (productId) => {
-        if (!cartItems.includes(productId)) {
-            setCartItems(prev => [...prev, productId]);
-        }
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
     };
 
     const filteredAndSortedProducts = allDiscountedProducts
@@ -76,20 +77,20 @@ function DiscountedProductsPage() {
             </div>
 
             <div className={styles.filterContainer}>
-              <div className={styles.priceInputs}>
-                  Price 
-                  <input
-                      type="number"
-                      placeholder="Min Price"
-                      value={minPrice}
-                      onChange={(e) => setMinPrice(e.target.value)}
-                  />
-                  <input
-                      type="number"
-                      placeholder="Max Price"
-                      value={maxPrice}
-                      onChange={(e) => setMaxPrice(e.target.value)}
-                  />
+                <div className={styles.priceInputs}>
+                    Price 
+                    <input
+                        type="number"
+                        placeholder="Min Price"
+                        value={minPrice}
+                        onChange={(e) => setMinPrice(e.target.value)}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Max Price"
+                        value={maxPrice}
+                        onChange={(e) => setMaxPrice(e.target.value)}
+                    />
                 </div>
 
                 <p>Sorted</p>
@@ -111,7 +112,7 @@ function DiscountedProductsPage() {
 
             <ul className={styles.gridContainer}>
                 {filteredAndSortedProducts.slice(0, 8).map(product => {
-                    const isInCart = cartItems.includes(product.id);
+                    const isInCart = cartItemIds.includes(product.id);
                     return (
                         <li key={product.id} className={styles.gridItem}>
                             <div className={styles.cardWrapper}>
@@ -127,7 +128,8 @@ function DiscountedProductsPage() {
                                     className={classNames(styles.cartButton, {
                                         [styles.cartButtonActive]: isInCart
                                     })}
-                                    onClick={() => handleAddToCart(product.id)}
+                                    onClick={() => handleAddToCart(product)}
+                                    disabled={isInCart}
                                 >
                                     {isInCart ? 'Added' : 'Add to cart'}
                                 </Button>
