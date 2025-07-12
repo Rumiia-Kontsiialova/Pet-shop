@@ -296,3 +296,20 @@ p {
   margin-top: 10px;
   width: 100%;
 }
+
+.modal :global(.ant-modal-content) {
+  background-color: rgba(13, 80, 255, 1);
+  max-width: 548px;
+  width: 100%;
+  max-height: 236px;
+  height: 100%;
+  color: white;
+
+}
+
+.modal :global(.ant-modal-header) {
+  background-color: rgba(13, 80, 255, 1); /* Синий заголовок */
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+}

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart, } from '../../redux/slices/basketSlice'
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './BasketPage.module.css';
 
@@ -9,6 +9,21 @@ const BasketPage = () => {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state) => state.cart);
   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  const [ isModalVisible, setIsModalVisible ] = useState(false)
+
+   const handleOrderSubmit = (e) => {
+    e.preventDefault();
+    // Здесь можно добавить логику отправки данных, если будет бекенд
+
+    setIsModalVisible(true); // показать модалку
+    e.target.reset(); // очистить форму
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
+
 
   if (items.length === 0) {
     return (
@@ -68,15 +83,23 @@ const BasketPage = () => {
         <p>{totalCount} items</p>
         <h3>Total <span className={styles.totalPrice}>${totalPrice.toFixed(2)}</span></h3>
 
-        <form className={styles.orderForm}>
+        <form className={styles.orderForm} onSubmit={handleOrderSubmit}>
           <input type="text" placeholder="Name" required />
           <input type="text" placeholder="Phone number" required />
           <input type="email" placeholder="Email" required />
           <button type="submit" className={styles.orderBtn}>Order</button>
-        </form>
-
-        
+        </form> 
       </div>
+      <Modal
+        title='Congratulations!'
+        visible={isModalVisible}
+        onCancel={handleCloseModal}
+        footer={null}
+        className={styles.modal}
+      >
+        <p>Your order has been successfully placed on the website.</p>
+        <p>A manager will contact you shortly to confirm your order.</p>
+      </Modal>
     </div>
   );
 };
